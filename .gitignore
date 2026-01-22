@@ -1,0 +1,51 @@
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# Environment variables
+.env
+
+# Data directories
+data/raw/*
+data/processed/*
+data/vectordb/*
+
+# But keep directory structure
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/vectordb/.gitkeep
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Playwright
+playwright/.cache/
+
+# Node.js
+node_modules/
+website/node_modules/
+npm-debug.log
+yarn-error.log
+
+# Next.js
+website/.next/
+website/dist/
+website/out/
