@@ -1,0 +1,153 @@
+{
+  "priority_sources": [
+    {
+      "name": "Google Cloud Solutions",
+      "category": "cloud_provider",
+      "base_url": "https://cloud.google.com",
+      "urls": [
+        "https://cloud.google.com/solutions",
+        "https://cloud.google.com/use-cases",
+        "https://cloud.google.com/architecture"
+      ],
+      "scraping_strategy": "dynamic",
+      "selectors": {
+        "title": "h1, h2.solution-title",
+        "description": "p.description, div.use-case-description",
+        "architecture": "div.architecture-diagram-text"
+      },
+      "extract_patterns": {
+        "problem": ["challenge", "business need", "problem statement"],
+        "solution": ["solution", "approach", "architecture"],
+        "tech_stack": ["technologies", "services used", "ml model"]
+      }
+    },
+    {
+      "name": "AWS ML Use Cases",
+      "category": "cloud_provider",
+      "base_url": "https://aws.amazon.com",
+      "urls": [
+        "https://aws.amazon.com/machine-learning/use-cases/",
+        "https://aws.amazon.com/solutions/",
+        "https://aws.amazon.com/ai/customers/"
+      ],
+      "scraping_strategy": "dynamic",
+      "selectors": {
+        "title": "h1, h2.use-case-title",
+        "description": "div.use-case-content, p.description",
+        "benefits": "ul.benefits li"
+      },
+      "extract_patterns": {
+        "problem": ["use case", "challenge", "business problem"],
+        "solution": ["solution", "aws services", "machine learning"],
+        "tech_stack": ["sagemaker", "rekognition", "comprehend", "ml", "dl"]
+      }
+    },
+    {
+      "name": "Azure AI Architecture",
+      "category": "cloud_provider",
+      "base_url": "https://learn.microsoft.com",
+      "urls": [
+        "https://learn.microsoft.com/en-us/azure/architecture/ai-ml/",
+        "https://learn.microsoft.com/en-us/azure/architecture/browse/",
+        "https://learn.microsoft.com/en-us/azure/machine-learning/concept-model-catalog"
+      ],
+      "scraping_strategy": "static",
+      "selectors": {
+        "title": "h1, h2",
+        "content": "article.content, div.main-content",
+        "architecture": "section.architecture"
+      },
+      "extract_patterns": {
+        "problem": ["scenario", "use case", "business need"],
+        "solution": ["solution", "architecture", "approach"],
+        "tech_stack": ["azure ml", "cognitive services", "openai", "model"]
+      }
+    },
+    {
+      "name": "DeepLearning.AI Blog",
+      "category": "educational",
+      "base_url": "https://www.deeplearning.ai",
+      "urls": [
+        "https://www.deeplearning.ai/blog/",
+        "https://www.deeplearning.ai/resources/"
+      ],
+      "scraping_strategy": "static",
+      "selectors": {
+        "title": "h1.post-title, h2.entry-title",
+        "content": "div.post-content, article.blog-post",
+        "categories": "span.category, a.tag"
+      },
+      "extract_patterns": {
+        "problem": ["when to use", "vs", "choosing", "decision"],
+        "solution": ["approach", "technique", "algorithm", "model"],
+        "reasoning": ["because", "why", "advantage", "suitable for"]
+      }
+    },
+    {
+      "name": "Hugging Face Models",
+      "category": "model_repository",
+      "base_url": "https://huggingface.co",
+      "urls": [
+        "https://huggingface.co/models",
+        "https://huggingface.co/tasks"
+      ],
+      "scraping_strategy": "api",
+      "api_endpoint": "https://huggingface.co/api/models",
+      "extract_patterns": {
+        "task": ["task", "pipeline_tag"],
+        "capability": ["description", "widget"],
+        "use_case": ["intended uses", "limitations"]
+      }
+    }
+  ],
+  "extended_sources": [
+    {
+      "name": "McKinsey AI Insights",
+      "category": "consulting",
+      "base_url": "https://www.mckinsey.com",
+      "urls": [
+        "https://www.mckinsey.com/capabilities/quantumblack/our-insights"
+      ],
+      "scraping_strategy": "dynamic",
+      "rate_limit": 2
+    },
+    {
+      "name": "IBM AI Use Cases",
+      "category": "enterprise",
+      "base_url": "https://www.ibm.com",
+      "urls": [
+        "https://www.ibm.com/think/topics/artificial-intelligence",
+        "https://www.ibm.com/artificial-intelligence/use-cases"
+      ],
+      "scraping_strategy": "dynamic"
+    },
+    {
+      "name": "OpenAI Research",
+      "category": "research",
+      "base_url": "https://openai.com",
+      "urls": [
+        "https://openai.com/research",
+        "https://openai.com/blog"
+      ],
+      "scraping_strategy": "static"
+    },
+    {
+      "name": "Towards Data Science",
+      "category": "educational",
+      "base_url": "https://towardsdatascience.com",
+      "urls": [
+        "https://towardsdatascience.com/tagged/machine-learning",
+        "https://towardsdatascience.com/tagged/artificial-intelligence"
+      ],
+      "scraping_strategy": "dynamic",
+      "note": "Requires Medium authentication for full access"
+    }
+  ],
+  "scraping_config": {
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "timeout": 30,
+    "retry_attempts": 3,
+    "delay_between_requests": 2,
+    "respect_robots_txt": true
+  }
+}

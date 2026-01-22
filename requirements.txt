@@ -1,0 +1,30 @@
+# Web Scraping
+beautifulsoup4
+requests
+selenium
+playwright
+aiohttp
+
+# Data Processing
+pandas
+numpy
+
+# NLP & Embeddings (HuggingFace)
+sentence-transformers  # HuggingFace embeddings
+
+# Vector Database (ChromaDB)
+chromadb
+
+# LLM Framework
+anthropic
+groq
+tiktoken
+
+# Utilities
+python-dotenv
+tqdm
+pydantic
+
+# API & Web
+fastapi
+uvicorn

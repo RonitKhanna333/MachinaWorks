@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply text-slate-800 dark:text-slate-100 bg-white dark:bg-slate-950;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-primary-700 dark:text-primary-300 font-semibold py-3 px-8 rounded-lg shadow-md hover:shadow-lg border border-primary-200 dark:border-primary-800 transition-all duration-200;
+  }
+  
+  .card {
+    @apply bg-white dark:bg-slate-900 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-8 border border-slate-100 dark:border-slate-800;
+  }
+  
+  .card-gradient {
+    @apply bg-white dark:bg-slate-900 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-8 border border-slate-100 dark:border-slate-800;
+  }
+  
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6;
+  }
+  
+  .feature-icon {
+    @apply w-16 h-16 rounded-xl bg-primary-100 dark:bg-primary-900 flex items-center justify-center text-primary-700 dark:text-primary-300 shadow-sm;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply text-primary-700 dark:text-primary-300;
+  }
+}
+
+/* Custom scrollbar - Light mode */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Dark mode scrollbar */
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-track {
+    background: #1e293b;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+  }
+}
+
+
